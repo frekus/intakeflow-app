@@ -56,21 +56,21 @@ const testimonials = [
     name: "Sarah Mitchell",
     role: "Head of Sales",
     company: "Northfield Agency",
-    avatar: "SM",
+    avatar: "https://i.pravatar.cc/100?img=5",
   },
   {
     quote: "The moment a form comes in, the Calendly link is already in their inbox and our Slack is pinging. It feels like magic — but it's just good automation.",
     name: "James Okafor",
     role: "Founder",
     company: "Clearline Consulting",
-    avatar: "JO",
+    avatar: "https://i.pravatar.cc/100?img=11",
   },
   {
     quote: "We had leads falling through the cracks every week. Since IntakeFlow, we haven't missed one. The Sheets log alone has changed how we track pipeline.",
     name: "Priya Nair",
     role: "Operations Manager",
     company: "Vantage Growth",
-    avatar: "PN",
+    avatar: "https://i.pravatar.cc/100?img=45",
   },
 ]
 
@@ -294,9 +294,7 @@ export default function Home() {
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed flex-1">&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                    {t.avatar}
-                  </div>
+                  <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-gray-900 text-sm">{t.name}</p>
                     <p className="text-gray-500 text-xs">{t.role} · {t.company}</p>
