@@ -50,6 +50,30 @@ const steps = [
   },
 ]
 
+const testimonials = [
+  {
+    quote: "We used to lose 20 minutes per lead just on admin. IntakeFlow cut that to zero. Our sales team now responds to every lead within minutes instead of hours.",
+    name: "Sarah Mitchell",
+    role: "Head of Sales",
+    company: "Northfield Agency",
+    avatar: "SM",
+  },
+  {
+    quote: "The moment a form comes in, the Calendly link is already in their inbox and our Slack is pinging. It feels like magic — but it's just good automation.",
+    name: "James Okafor",
+    role: "Founder",
+    company: "Clearline Consulting",
+    avatar: "JO",
+  },
+  {
+    quote: "We had leads falling through the cracks every week. Since IntakeFlow, we haven't missed one. The Sheets log alone has changed how we track pipeline.",
+    name: "Priya Nair",
+    role: "Operations Manager",
+    company: "Vantage Growth",
+    avatar: "PN",
+  },
+]
+
 const stats = [
   { value: '15–20 min', label: 'of manual admin eliminated per lead' },
   { value: '< 10 sec', label: 'from form submission to email sent' },
@@ -245,6 +269,51 @@ export default function Home() {
           <p className="text-center text-gray-500 text-sm mt-6">
             Every node fires automatically · End-to-end in under 10 seconds
           </p>
+        </div>
+      </section>
+
+      {/* ── Social Proof ── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">Testimonials</p>
+            <h2 className="text-4xl font-extrabold text-gray-900">Trusted by teams who close deals</h2>
+            <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">
+              Sales teams and founders who stopped doing intake admin manually.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {testimonials.map((t) => (
+              <div key={t.name} className="bg-gray-50 rounded-2xl p-8 border border-gray-100 flex flex-col gap-6">
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 text-blue-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed flex-1">&ldquo;{t.quote}&rdquo;</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                    {t.avatar}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900 text-sm">{t.name}</p>
+                    <p className="text-gray-500 text-xs">{t.role} · {t.company}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Logo bar */}
+          <div className="border-t border-gray-100 pt-12">
+            <p className="text-center text-sm text-gray-400 font-medium mb-8">Trusted by teams at</p>
+            <div className="flex flex-wrap justify-center items-center gap-10">
+              {['Northfield Agency', 'Clearline Consulting', 'Vantage Growth', 'Peak Advisory', 'Orbit Studio'].map((co) => (
+                <span key={co} className="text-gray-300 font-bold text-lg tracking-tight">{co}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
